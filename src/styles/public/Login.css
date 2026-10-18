@@ -1,0 +1,153 @@
+/* ══════════════════════════════════════════════════════════
+   LOGIN CSS - REFINADO (NOVA GRAF)
+   ══════════════════════════════════════════════════════════ */
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 80px;
+  box-sizing: border-box;
+  /* Fondo sólido usando el Gris de la marca para coherencia con el header */
+  background-color: #DBDBD3 !important; 
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decoración sutil de fondo para quitar la "simplicidad" */
+.login-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(26, 97, 99, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(53, 186, 153, 0.05) 0px, transparent 50%);
+  z-index: 0;
+}
+
+.login-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Tarjeta de login: Más chica y estilizada */
+.login-card {
+  background: #FFFFFF !important; 
+  border-radius: 24px; /* Un poco menos redondeado para elegancia */
+  padding: 2.2rem 2rem;
+  max-width: 380px; /* Tamaño reducido para un look más premium */
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(26, 97, 99, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+}
+
+.login-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; /* Tamaño más balanceado */
+  font-weight: 700;
+  color: #1A6163 !important; 
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+.login-subtitle {
+  color: #666666;
+  text-align: center;
+  margin-bottom: 1.8rem;
+  font-size: 0.85rem;
+}
+
+/* Inputs más compactos */
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  background: #F8F8F6; 
+  border: 1.5px solid #DBDBD3; 
+  border-radius: 12px; /* Coherente con diseño moderno */
+  outline: none;
+  transition: all 0.2s ease;
+  color: #1A6163;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  border-color: #35BA99; 
+  background: #FFFFFF;
+}
+
+/* Botones con los colores de la paleta */
+.login-btn, .google-btn {
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.85rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Botón Ingresar: Verde Bosque */
+.login-btn {
+  background: #1A6163 !important; 
+  color: #FFFFFF !important;
+  margin-top: 0.8rem;
+}
+
+.login-btn:hover {
+  background: #35BA99 !important; /* Cambio a verde acento */
+  box-shadow: 0 8px 15px rgba(53, 186, 153, 0.2);
+}
+
+/* Botón Google: Ahora con color de la marca */
+.google-btn {
+  background: #FFFFFF;
+  border: 1.5px solid #1A6163; /* Borde con el verde principal */
+  color: #1A6163;
+  margin-top: 1rem;
+}
+
+.google-btn:hover {
+  background: rgba(26, 97, 99, 0.05);
+  border-color: #35BA99;
+  color: #35BA99;
+}
+
+.login-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.login-footer a {
+  color: #35BA99 !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.login-footer a:hover {
+  color: #1A6163 !important;
+  text-decoration: underline;
+}

@@ -1,0 +1,357 @@
+:root {
+  --verde-profundo: #1A6163;
+  --verde-principal: #35BA99;
+  --verde-suave: #6acfaf;
+  --verde-claro: #daf2e8;
+  --gris-fondo: #f4f4f0;
+  --gris-borde: #e2e2da;
+  --gris-texto: #4b5563;
+  --sombra-card: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+  --borde-radio: 20px;
+  --transicion: all 0.2s ease;
+}
+
+.register-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--verde-claro) 0%, #ffffff 100%);
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+
+.register-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem 2rem;
+}
+
+.register-card {
+  max-width: 420px;
+  width: 100%;
+  background: white;
+  border-radius: var(--borde-radio);
+  box-shadow: var(--sombra-card);
+  padding: 1.8rem 1.8rem;
+  border: 1px solid var(--gris-borde);
+  transition: var(--transicion);
+}
+
+.register-card h1 {
+  color: var(--verde-profundo);
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.register-subtitle {
+  text-align: center;
+  color: var(--gris-texto);
+  font-size: 0.85rem;
+  margin-bottom: 1.8rem;
+  font-weight: 400;
+}
+
+/* Indicador de pasos */
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.step-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gris-borde);
+  transition: var(--transicion);
+}
+
+.step-dot.active {
+  background: var(--verde-principal);
+  transform: scale(1.2);
+}
+
+/* Formulario */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+/* Inputs más pequeños (solo reducción de tamaño) */
+.register-form input {
+  width: 100%;
+  padding: 0.6rem 0.9rem;      /* antes 0.75rem 1rem */
+  border: 1px solid var(--gris-borde);
+  border-radius: 12px;
+  font-size: 0.85rem;          /* antes 0.9rem */
+  transition: var(--transicion);
+  background-color: white;
+  box-sizing: border-box;
+  color: var(--gris-texto);
+}
+
+.register-form input:focus {
+  outline: none;
+  border-color: var(--verde-principal);
+  box-shadow: 0 0 0 3px rgba(53, 186, 153, 0.1);
+}
+
+.register-form input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Contenedor para cada campo con mensaje de error */
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+/* Mensaje de error */
+.field-error {
+  display: block;
+  color: #e53e3e;
+  font-size: 0.7rem;
+  margin-top: 0.25rem;
+  margin-left: 0.25rem;
+}
+
+/* Campos de contraseña con botón toggle */
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field input {
+  width: 100%;
+  padding-right: 2.8rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0;
+  color: #6b7280;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle:hover {
+  color: var(--verde-principal);
+}
+
+.password-field input:focus + .password-toggle,
+.password-field input:focus ~ .password-toggle {
+  color: var(--verde-principal);
+}
+
+/* Botones */
+.btn-next,
+.btn-register {
+  background: var(--verde-principal);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transicion);
+  width: 100%;
+  text-align: center;
+}
+
+.btn-next:hover,
+.btn-register:hover {
+  background: var(--verde-profundo);
+  transform: translateY(-1px);
+}
+
+.btn-next:active,
+.btn-register:active {
+  transform: translateY(0);
+}
+
+/* Botón volver con flecha */
+.btn-back {
+  background: #f1f5f9;
+  color: var(--gris-texto);
+  border: 1px solid var(--gris-borde);
+  border-radius: 12px;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transicion);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.btn-back:hover {
+  background: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+/* Contenedor de botones en paso 2 */
+.step-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.btn-register {
+  flex: 1;
+  margin-top: 0;
+}
+
+/* Mensajes generales (validación de paso) */
+.message {
+  text-align: center;
+  margin: 1rem 0 0;
+  padding: 0.6rem;
+  border-radius: 12px;
+  background-color: var(--verde-claro);
+  color: var(--verde-profundo);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+/* Social login */
+.social-login {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.social-title {
+  color: #6b7280;
+  font-size: 0.8rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+.social-title::before,
+.social-title::after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  background: var(--gris-borde);
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--gris-borde);
+  border-radius: 12px;
+  background: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transicion);
+  flex: 1;
+  max-width: 140px;
+}
+
+.social-btn.google {
+  color: #db4437;
+  border-color: #db4437;
+}
+
+.social-btn.google:hover {
+  background-color: #db4437;
+  color: white;
+  border-color: #db4437;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+}
+
+.login-link a {
+  color: var(--verde-principal);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.required-note {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #9ca3af;
+  margin-top: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .register-card {
+    padding: 1.5rem;
+  }
+  .register-card h1 {
+    font-size: 1.6rem;
+  }
+  .social-buttons {
+    flex-direction: column;
+  }
+  .social-btn {
+    max-width: 100%;
+  }
+}
+/* ─── Mostrar/ocultar contraseña con íconos ─── */
+.password-group {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1A6163;
+  transition: opacity 0.2s;
+}
+
+.password-toggle:hover {
+  opacity: 0.7;
+}

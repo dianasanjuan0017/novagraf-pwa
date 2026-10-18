@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-primary: #eef7f5;
+  --bg-secondary: #f4fdfb;
+  --surface: #ffffff;
+  --border-subtle: #d4eeea;
+  --border-medium: #a8ddd6;
+
+  --accent-primary: #1A6163;
+  --accent-hover: #0f4042;
+  --accent-glow: rgba(53, 186, 153, 0.18);
+  --accent-soft: rgba(53, 186, 153, 0.08);
+
+  --success: #1A6163;
+  --success-light: #e1f5f0;
+  --danger: #dc3545;
+  --danger-light: #fff5f5;
+
+  --text-primary: #0f2f30;
+  --text-secondary: #3a5a5b;
+  --text-tertiary: #6a8e8f;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-xl: 0 20px 32px -12px rgba(0,0,0,0.10);
+  --shadow-accent: 0 4px 14px rgba(53, 186, 153, 0.15);
+  --shadow-hover: 0 8px 24px rgba(53, 186, 153, 0.12);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin-empresa-page {
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, #f0faf8 100%);
+  min-height: 100vh;
+  color: var(--text-primary);
+  padding: 48px 56px;
+}
+
+.admin-empresa-header {
+  margin-bottom: 48px;
+}
+
+.admin-empresa-header h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1A6163 0%, #35BA99 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+}
+
+.admin-empresa-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #1A6163, #35BA99);
+  border-radius: var(--radius-sm);
+}
+
+.admin-empresa-header p {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  margin: 16px 0 0;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.admin-empresa-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.admin-empresa-grid .span-full {
+  grid-column: 1 / -1;
+}
+
+.empresa-section {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 28px 32px;
+  transition: all var(--transition-smooth);
+}
+
+.empresa-section:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+}
+
+.empresa-section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1.5px solid var(--border-subtle);
+}
+
+.empresa-section-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--accent-soft), #e1f5f0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.empresa-section-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.empresa-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.empresa-field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.empresa-input,
+.empresa-textarea,
+.empresa-select {
+  width: 100%;
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  padding: 12px 16px;
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+  outline: none;
+  writing-mode: horizontal-tb;
+}
+
+.empresa-textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+.empresa-input:focus,
+.empresa-textarea:focus,
+.empresa-select:focus {
+  border-color: #35BA99;
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  background: var(--surface);
+}
+
+.btn-guardar {
+  width: 100%;
+  background: linear-gradient(135deg, #1A6163, #35BA99);
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-accent);
+}
+
+.btn-guardar:hover {
+  background: linear-gradient(135deg, #0f4042, #1A6163);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-agregar {
+  background: rgba(53, 186, 153, 0.08);
+  color: #1A6163;
+  padding: 8px 16px;
+  border: 1.5px solid #35BA99;
+  border-radius: var(--radius-md);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-agregar:hover {
+  background: rgba(53, 186, 153, 0.18);
+}
+
+.empresa-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.empresa-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  gap: 16px;
+  transition: all var(--transition-fast);
+  writing-mode: horizontal-tb;
+}
+
+.empresa-item:hover {
+  border-color: #35BA99;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.empresa-item-text {
+  color: var(--text-primary);
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.6;
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  writing-mode: horizontal-tb;
+  margin: 0;
+}
+
+.empresa-item-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.btn-editar-item {
+  background: rgba(53, 186, 153, 0.08);
+  color: #1A6163;
+  border: 1px solid #35BA99;
+  border-radius: var(--radius-sm);
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-editar-item:hover {
+  background: rgba(53, 186, 153, 0.2);
+}
+
+.btn-eliminar-item {
+  background: var(--danger-light);
+  color: var(--danger);
+  border: 1px solid #f5c0c0;
+  border-radius: var(--radius-sm);
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-eliminar-item:hover {
+  background: var(--danger);
+  color: white;
+  border-color: var(--danger);
+}
+
+.empresa-status {
+  font-size: 0.8125rem;
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.empresa-status.ok {
+  background: var(--success-light);
+  color: var(--success);
+  border-left: 3px solid #35BA99;
+}
+
+.empresa-status.error {
+  background: var(--danger-light);
+  color: var(--danger);
+  border-left: 3px solid var(--danger);
+}
+
+.empresa-loading {
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.empresa-loading::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-medium);
+  border-top-color: #35BA99;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.empresa-add-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.empresa-add-row .empresa-input {
+  flex: 1;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: rgba(53, 186, 153, 0.1);
+  border-radius: 20px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #1A6163;
+  margin-left: 8px;
+}
+
+@media (max-width: 1024px) {
+  .admin-empresa-page { padding: 32px 28px; }
+}
+
+@media (max-width: 768px) {
+  .admin-empresa-page { padding: 24px 20px; }
+  .admin-empresa-header h1 { font-size: 2rem; }
+  .admin-empresa-grid { grid-template-columns: 1fr; }
+  .admin-empresa-grid .span-full { grid-column: 1; }
+  .empresa-section { padding: 20px 24px; }
+}
+
+@media (max-width: 480px) {
+  .empresa-add-row { flex-direction: column; }
+  .btn-agregar { width: 100%; }
+}
