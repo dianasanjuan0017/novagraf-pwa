@@ -136,6 +136,8 @@ function App() {
           <Route path="/cliente/pedido/:id/pago-final" element={<PagoFinal />} />
           <Route path="/cliente/ofertas" element={<OfertasPage />} />
           <Route path="/cliente/compras" element={<MisCompras />} />
+          <Route path="/cliente/terminos" element={<Terminos />} />
+          <Route path="/cliente/privacidad" element={<Politicas />} />
         </Route>
 
         {/* Rutas admin */}
