@@ -26,6 +26,8 @@ import Contacto from './pages/public/Contacto';
 import PortafolioPublico from './pages/public/PortafolioPublico';
 import Nosotros from './pages/public/Nosotros';
 import Contactos from './pages/public/Contactos';
+import Terminos from './pages/public/Terminos';
+import Politicas from './pages/public/Politicas';
 
 
 
