@@ -1,0 +1,76 @@
+/* Páginas legales: Términos y condiciones / Política de privacidad */
+.legal-page {
+  max-width: 860px;
+  margin: 40px auto;
+  padding: 36px 28px;
+  background: #fff;
+  border: 1px solid #ddeee5;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  color: #161c1a;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+}
+
+.legal-page h1 {
+  margin: 0 0 6px;
+  font-size: 2rem;
+  color: #1A6163;
+}
+
+.legal-page .legal-fecha {
+  margin: 0 0 28px;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #6b7280;
+}
+
+.legal-page h2 {
+  margin: 28px 0 8px;
+  font-size: 1.15rem;
+  color: #0f3c3e;
+}
+
+.legal-page p,
+.legal-page li {
+  font-size: 1rem;
+  color: #34413d;
+}
+
+.legal-page p {
+  margin: 0 0 12px;
+  text-align: justify;
+}
+
+.legal-page ul {
+  margin: 0 0 12px;
+  padding-left: 22px;
+}
+
+.legal-page .legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 32px;
+  padding-top: 18px;
+  border-top: 1px solid #ddeee5;
+}
+
+.legal-page .legal-links a {
+  color: #1A6163;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.legal-page .legal-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .legal-page {
+    margin: 16px 12px;
+    padding: 24px 18px;
+  }
+  .legal-page h1 { font-size: 1.6rem; }
+  .legal-page p { text-align: left; }
+}
