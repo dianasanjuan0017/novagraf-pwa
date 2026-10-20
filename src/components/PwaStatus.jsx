@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './PwaStatus.css';
+import { precargarContenido } from '../utils/pwa';
 
 const yaInstalada = () =>
   window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
@@ -20,6 +21,10 @@ export default function PwaStatus() {
 
   useEffect(() => {
     let timer;
+
+      if (navigator.onLine && 'serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then(() => precargarContenido());
+      }
 
     const alVolver = () => {
       setOnline(true);
