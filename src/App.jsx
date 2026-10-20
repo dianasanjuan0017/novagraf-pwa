@@ -110,6 +110,8 @@ function App() {
           <Route path="/catalogo" element={<PortafolioPublico />} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/contactos" element={<Contactos />} />
+          <Route path="/terminos" element={<Terminos />} />
+          <Route path="/privacidad" element={<Politicas />} />
           
         </Route>
 
